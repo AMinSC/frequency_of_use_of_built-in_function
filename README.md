@@ -1,9 +1,9 @@
 # Frequency of use of Built-in function
 
 ## 개발환경
-- python 3.10.8
-- pandas 2.0.1
-- matplotlib 3.7.1
+- Python 3.10.8
+- Pandas 2.0.1
+- Matplotlib 3.7.1
 
 ## 진행 사항
 - data에서 function name(keyword) counting

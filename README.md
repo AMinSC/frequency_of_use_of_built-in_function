@@ -2,8 +2,8 @@
 
 <img src="https://raw.githubusercontent.com/AMinSC/frequency_of_use_of_built-in_function/main/output_1.png">
 
-- data source = https://github.com/paullabkorea/programmersLv0
-  - only python
+- *data source = https://github.com/paullabkorea/programmersLv0*
+  - *only python*
 
 
 ### 개발환경
@@ -19,6 +19,7 @@
 - jupyter notebook 에서 seaborn 으로 시각화
 
 ### 개선 사항
+- **내부 함수 키워드 체크**
 - 파일 및 폴더, 함수 정리
 - 추후 기능 추가
   - 데이터 추가(수집 기능)

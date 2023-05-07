@@ -5,7 +5,6 @@ import pandas as pd
 import csv
 import os
 
-import matplotlib as plt
 
 # 내부 함수 데이터 > 추후 txt 혹은 Crawling 개선
 # value = pd.read_csv(os.getcwd() + "/test.txt", sep=",", encoding="utf-8")
@@ -27,26 +26,26 @@ def get_data() -> str:
     return data
 
 
-# Built-in function list
-func = ['abs', 'all', 'any', 'bin', 'bool', 'chr', 'dict',
-        'dir', 'enumerate', 'eval', 'filter', 'float', 'globals',
-        'help', 'hex', 'id', 'input', 'int', 'isinstance', 
-        'issubclass', 'iter', 'len', 'list', 'locals', 'map',
-        'max', 'min', 'next', 'object', 'oct', 'open', 'ord',
-        'pow', 'print', 'property', 'range', 'repr', 'reversed',
-        'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod'
-        'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+def get_func_cnt():
+    '''func_list내에 내부함수를 get_data()함수의 데이터에서 사용 빈도를 DataFrame으로 반환함(내림차순)'''
+    # Built-in function list
+    func = ['abs', 'all', 'any', 'bin', 'bool', 'chr', 'dict',
+            'dir', 'enumerate', 'eval', 'filter', 'float', 'globals',
+            'help', 'hex', 'id', 'input', 'int', 'isinstance', 
+            'issubclass', 'iter', 'len', 'list', 'locals', 'map',
+            'max', 'min', 'next', 'object', 'oct', 'open', 'ord',
+            'pow', 'print', 'property', 'range', 'repr', 'reversed',
+            'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod'
+            'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
 
 
-# frequency of use of built-in function
-frequency_use = {}
+    # frequency of use of built-in function
+    frequency_use = {}
 
 
-for i in func:
-    frequency_use[i] = len(re.findall(i, get_data()))
+    for i in func:
+        frequency_use[i] = len(re.findall(i, get_data()))
 
-# cnt = Counter(value)
-
-# print(list(cnt.elements()))
-mydf = pd.DataFrame(list(frequency_use.items()), columns=["func-name", "func-cnt"])
-print(mydf[mydf['func-cnt'] > 0])
+    # print(list(cnt.elements()))
+    mydf = pd.DataFrame(list(frequency_use.items()), columns=["func-name", "func-cnt"])
+    print(mydf[mydf['func-cnt'] > 0].sort_values('func-cnt', ascending=False))

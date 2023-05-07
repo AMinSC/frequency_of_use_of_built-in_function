@@ -2,7 +2,7 @@
 
 ## ProgrammersLv0 Built-in Function Count
 
-<img src="https://raw.githubusercontent.com/AMinSC/frequency_of_use_of_built-in_function/main/output.png">
+<img src="https://raw.githubusercontent.com/AMinSC/frequency_of_use_of_built-in_function/main/output_1.pn">
 data source = https://github.com/paullabkorea/programmersLv0
 
 ### 개발환경

@@ -19,6 +19,7 @@
 - jupyter notebook 에서 seaborn 으로 시각화
 - 내부 함수 키워드 체크 이슈 업데이트
   - 예) id: side, idx 에서 count 이슈 수정
+- 파일 띄어쓰기 및 encoding error check
 
 ### 개선 사항
 - 수집된 데이터 전처리 기능

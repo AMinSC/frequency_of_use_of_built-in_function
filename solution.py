@@ -14,6 +14,7 @@ def get_data() -> str:
 
     path = os.getcwd() + '/data/'
     file_list = os.listdir(path)
+    # print(file_list)  # 파일 이름 띄어쓰기 확인
     for i in file_list:
         f = open(path + i, 'r', encoding='utf-8')
         rea = csv.reader(f)

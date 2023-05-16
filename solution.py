@@ -15,7 +15,7 @@ def get_data() -> str:
     path = os.getcwd() + '/data/'
     file_list = os.listdir(path)
     for i in file_list:
-        f = open(path + i, 'r')
+        f = open(path + i, 'r', encoding='utf-8')
         rea = csv.reader(f)
         for row in rea:
             try:
@@ -41,11 +41,14 @@ def get_func_cnt():
 
     # frequency of use of built-in function
     frequency_use = {}
-
+    data_list = get_data()
 
     for i in func:
-        frequency_use[i] = len(re.findall(f'{i}\(', get_data()))
+        frequency_use[i] = len(re.findall(f'{i}\(', data_list))
 
     # print(list(cnt.elements()))
     mydf = pd.DataFrame(list(frequency_use.items()), columns=["func-name", "func-cnt"])
     print(mydf[mydf['func-cnt'] > 0].sort_values('func-cnt', ascending=False))
+
+if __name__ == '__main__':
+    get_func_cnt()

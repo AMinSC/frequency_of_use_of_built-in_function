@@ -14,7 +14,6 @@ def get_data() -> str:
 
     path = os.getcwd() + '/data/'
     file_list = os.listdir(path)
-    print(file_list)
     # print(file_list)  # 파일 이름 띄어쓰기 확인
     for i in file_list:
         f = open(path + i, 'r', encoding='utf-8')
@@ -48,6 +47,7 @@ def get_func_cnt():
     for i in func:
         frequency_use[i] = len(re.findall(f'{i}\(', data_list))
 
+    # print(list(cnt.elements()))
     mydf = pd.DataFrame(list(frequency_use.items()), columns=["func-name", "func-cnt"])
     print(mydf[mydf['func-cnt'] > 0].sort_values('func-cnt', ascending=False))
     # print(frequency_use)

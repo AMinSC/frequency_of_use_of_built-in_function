@@ -47,8 +47,10 @@ def get_func_cnt():
     for i in func:
         frequency_use[i] = len(re.findall(f'{i}\(', data_list))
 
+    # print(list(cnt.elements()))
     mydf = pd.DataFrame(list(frequency_use.items()), columns=["func-name", "func-cnt"])
     print(mydf[mydf['func-cnt'] > 0].sort_values('func-cnt', ascending=False))
+    # print(frequency_use)
 
 if __name__ == '__main__':
     get_func_cnt()

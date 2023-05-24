@@ -11,7 +11,7 @@ def get_data() -> list[dict]:
     Returns:
         data (list): 수집한 데이터 리스트
     '''
-    path = os.getcwd() + '/data/'
+    path = os.getcwd() + '/new_data/'
     file_list = os.listdir(path)
     data = []
     for i in file_list:

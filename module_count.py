@@ -1,6 +1,10 @@
-from get_data import get_data
+# Standard library import
 from collections import Counter
 import re
+
+# Local application import
+from get_data import get_data
+
 
 def module_count(data):
     for file_data in data:
@@ -8,14 +12,17 @@ def module_count(data):
 
         module_counts = Counter()
 
-        modules = re.findall(r'(?:import|from)\s+(\w+)', code)
-        module_counts.update(modules)
+        matches = re.findall(
+            r'(?:from|import)\s+([\w\s,]+?)(?:\s+as\s+\w+)?(?=\s*import|\n|$)', code)
+
+        for match in matches:
+            modules = [m.strip() for m in match.split(',')]
+            module_counts.update(modules)
 
         file_data['module'] = dict(module_counts)
 
-        file_data.pop('code')
-    
-    return  data
+    return data
+
 
 if __name__ == '__main__':
     data = get_data()

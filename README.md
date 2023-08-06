@@ -6,7 +6,7 @@
 
 ---
 
-<img src="https://raw.githubusercontent.com/AMinSC/frequency_of_use_of_built-in_function/main/output_2.png">
+<img src="https://raw.githubusercontent.com/AMinSC/frequency_of_use_of_built-in_function/main/asset/output_2.png">
 
 - *data source = https://github.com/paullabkorea/programmersLv0*
   - *only python*
